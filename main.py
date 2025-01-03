@@ -12,7 +12,7 @@ def days_to_units(num_of_days):
     else:
         return "You entered a negative value, please enter a valid positive num"
 
-# days_to_units(5)
+days_to_units(5)
 # days_to_units(10)
 # days_to_units(10)
 
