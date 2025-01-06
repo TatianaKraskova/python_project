@@ -19,11 +19,21 @@ days_to_units(5)
 
 def validate_and_execute():
     if user_input.isdigit():
-        user_input_number = int(user_input)
+        user_input_number = int(num_of_days_element)
         calculated_value = days_to_units(user_input_number)
         print(calculated_value)
     else:
         print("Your input is not a number")
 
-user_input = input("Hey user, enter a number of days\n")
-validate_and_execute()
+
+# while True:
+#     user_input = input("Hey user, enter a number of days\n")
+#     validate_and_execute()
+
+user_input = ""
+while user_input != "exit":
+    user_input = input("Hey user, enter a number of days\n")
+    for num_of_days_element in user_input.split(","):
+        validate_and_execute()
+
+# list [2, 4, 6]
