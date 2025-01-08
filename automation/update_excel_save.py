@@ -1,43 +1,51 @@
 import openpyxl
 
+# Load workbook and sheet
 inv_file = openpyxl.load_workbook("inventory.xlsx")
 product_list = inv_file["Sheet1"]
 
+# Initialize dictionaries
 product_per_supplier = {}
+total_value_per_supplier = {}
+product_under_50 = {}
 
 print("Max Rows:", product_list.max_row)
 print("Max Columns:", product_list.max_column)
 
+# Iterate through each product row
 for product_row in range(2, product_list.max_row + 1):
     supplier_name = product_list.cell(product_row, 4).value  # Column 4 = Supplier
-    #print(f"Row {product_row}, Supplier: {supplier_name}")  # Debugging
+    inventory = product_list.cell(product_row, 2).value      # Column 2 = Inventory
+    price = product_list.cell(product_row, 3).value          # Column 3 = Price
+    product_num = product_list.cell(product_row, 1).value    # Column 1 = Product Number
+    inventory_price = product_list.cell(product_row, 5)
 
-    if supplier_name is None:
-        continue  # Skip rows with empty supplier names
+    # Skip rows with missing supplier name or invalid inventory/price
+    if supplier_name is None or inventory is None or price is None:
+        continue
 
+    # Count products per supplier
     if supplier_name in product_per_supplier:
-        current_num_products = product_per_supplier.get(supplier_name)
-        product_per_supplier[supplier_name] = current_num_products + 1
+        product_per_supplier[supplier_name] += 1
     else:
-        print("Adding a new supplier:", supplier_name)
         product_per_supplier[supplier_name] = 1
 
-#print("Final Product Per Supplier Dictionary:")
-print(product_per_supplier)
+    # Calculate total value of inventory per supplier
+    if supplier_name in total_value_per_supplier:
+        total_value_per_supplier[supplier_name] += inventory * price
+    else:
+        total_value_per_supplier[supplier_name] = inventory * price
 
-# product_per_supplier = {}
-# print(product_list.max_row)
-# print(product_list.max_column)
-#
-# for product_row in range(2, product_list.max_row +1):
-#     supplier_name = product_list.cell(product_row, 4).value
-#     #print(supplier_name)
-#
-#     if supplier_name in product_per_supplier:
-#         current_num_products = product_per_supplier[supplier_name]
-#         product_per_supplier[supplier_name] = current_num_products + 1
-#     else:
-#         print("adding a new supplier")
-#         product_per_supplier[supplier_name] = 1
-#
-# print(product_per_supplier)
+    # Identify products with inventory less than 50
+    if inventory < 50:
+        product_under_50[int(product_num)] = int(inventory)
+    # Add value for the inventory_price
+    inventory_price.value = inventory * price
+
+inv_file.save("inventory_with_total_value.xlsx")
+
+# Final Results
+print("Product Count Per Supplier:", product_per_supplier)
+print("Total Inventory Value Per Supplier:", total_value_per_supplier)
+print("Products with Inventory Less than 50:", product_under_50)
+print("Products with total price:", inventory_price.value)
