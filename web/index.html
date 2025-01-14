@@ -1,0 +1,46 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Association</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Register</a></li>
+            <li><a href="savings.html">Savings</a></li>
+            <li><a href="loans.html">Loans</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Register to become a member</h1>
+        <form>
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName">
+
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+
+            <label for="dob">Date of birth (optional)</label>
+            <input type="date" id="dob" name="dob">
+
+            <label for="referral">
+                <input type="checkbox" id="referral" name="referral">
+                I wish to share how I heard about this company
+            </label>
+            <textarea id="referralText" name="referralText"></textarea>
+
+            <button type="reset">Clear</button>
+            <button type="submit">Register</button>
+            <button type="button">Save input</button>
+        </form>
+    </main>
+</body>
+</html>
