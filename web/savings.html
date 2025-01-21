@@ -1,11 +1,10 @@
-<!-- savings.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savings</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Save with Us</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
@@ -17,8 +16,48 @@
     </nav>
 
     <main>
-        <h1>Savings</h1>
-        <p>Manage your savings with ease and grow your wealth with our competitive rates.</p>
+        <h1>Deposit your money with us to earn a great yield</h1>
+        <form>
+            <label for="depositAmount">How much you wish to deposit</label>
+            <input type="text" id="depositAmount" name="depositAmount">
+
+            <label for="timePeriod">Time period</label>
+            <select id="timePeriod" name="timePeriod">
+                <option value="6 months">6 months</option>
+                <option value="1 year">1 year</option>
+                <option value="2 years">2 years</option>
+            </select>
+        </form>
+
+        <h2>Current rates (yearly yield)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>6 months</th>
+                    <th>1 year</th>
+                    <th>2 years</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Us</td>
+                    <td>4%</td>
+                    <td>5%</td>
+                    <td>6%</td>
+                </tr>
+                <tr>
+                    <td>Competition</td>
+                    <td>2%</td>
+                    <td>3%</td>
+                    <td>4%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Link to trigger file download -->
+        <a href="files/dummy.zip" download class="btn-download">Download Our Offer</a>
+
     </main>
 </body>
 </html>

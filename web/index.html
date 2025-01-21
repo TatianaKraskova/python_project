@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +22,8 @@
             <input type="text" id="firstName" name="firstName">
 
             <label for="lastName">Last name</label>
-            <input type="text" id="lastName" name="lastName">
+            <input type="text" id="lastName" name="lastName" required>
+            <div class="invalid-feedback">Valid last name is required</div>
 
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="you@example.com">
@@ -39,8 +39,15 @@
 
             <button type="reset">Clear</button>
             <button type="submit">Register</button>
-            <button type="button">Save input</button>
+            <button type="button" name="Save Input">Save input</button>
         </form>
     </main>
+<script>
+    document.querySelector('button[name="Save Input"]').addEventListener('click', () => {
+        const firstName = document.getElementById('firstName').value;
+        localStorage.setItem('First name', firstName);
+        console.log('Saved to localStorage:', firstName);
+    });
+</script>
 </body>
 </html>
