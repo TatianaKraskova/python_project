@@ -3,13 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save with Us</title>
+    <title>Deposit Your Money</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1em;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 2em;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 500px;
+            margin: 1em auto;
+            background: #eef8fe;
+            padding: 1em;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        label, input, select {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        input, select {
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        table {
+            width: 100%;
+            margin-top: 2em;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            text-align: center;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        a.btn-download {
+            display: inline-block;
+            margin-top: 1.5em;
+            padding: 0.75em 1.5em;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a.btn-download:hover {
+            background-color: #0056b3;
+        }
+        .highlight {
+            background-color: #e7f3fe;
+            padding: 0.5em;
+            border-radius: 5px;
+            margin-top: 1em;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Register</a></li>
+            <li><a href="register.html">Register</a></li>
             <li><a href="savings.html">Savings</a></li>
             <li><a href="loans.html">Loans</a></li>
         </ul>
@@ -19,15 +106,19 @@
         <h1>Deposit your money with us to earn a great yield</h1>
         <form>
             <label for="depositAmount">How much you wish to deposit</label>
-            <input type="text" id="depositAmount" name="depositAmount">
+            <input type="text" id="depositAmount" name="depositAmount" placeholder="Enter amount">
 
             <label for="timePeriod">Time period</label>
             <select id="timePeriod" name="timePeriod">
                 <option value="6 months">6 months</option>
-                <option value="1 year">1 year</option>
+                <option value="1 year" selected>1 year</option>
                 <option value="2 years">2 years</option>
             </select>
         </form>
+
+        <div class="highlight">
+            After 1 Year you will earn $6.15 on your deposit
+        </div>
 
         <h2>Current rates (yearly yield)</h2>
         <table>
@@ -55,9 +146,7 @@
             </tbody>
         </table>
 
-        <!-- Link to trigger file download -->
-        <a href="files/dummy.zip" download class="btn-download">Download Our Offer</a>
-
+        <a href="files/sample-offer.pdf" download class="btn-download">Download Our Offer</a>
     </main>
 </body>
 </html>
