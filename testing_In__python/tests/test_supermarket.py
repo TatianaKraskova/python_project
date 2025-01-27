@@ -1,9 +1,9 @@
-from unit_test_project.src.Product import Product
-from unit_test_project.src.ProductUnit import ProductUnit
-from unit_test_project.src.FakeCatalog import FakeCatalog
-from unit_test_project.src.ShoppingCart import ShoppingCart
-from unit_test_project.src.Teller import Teller
-from unit_test_project.src.SpecialOfferType import SpecialOfferType
+from testing_In__python.src.Product import Product
+from testing_In__python.src.ProductUnit import ProductUnit
+from testing_In__python.src.FakeCatalog import FakeCatalog
+from testing_In__python.src.ShoppingCart import ShoppingCart
+from testing_In__python.src.Teller import Teller
+from testing_In__python.src.SpecialOfferType import SpecialOfferType
 import pytest
 
 

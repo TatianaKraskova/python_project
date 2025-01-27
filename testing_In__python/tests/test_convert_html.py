@@ -1,6 +1,6 @@
 import io
 
-from unit_test_project.src.html_pages import HtmlPagesConverter
+from testing_In__python.src.html_pages import HtmlPagesConverter
 
 
 def test_convert_second_page():

@@ -1,5 +1,5 @@
 from unittest.mock import Mock
-from unit_test_project.src.alarm import Alarm, Sensor
+from testing_In__python.src.alarm import Alarm, Sensor
 
 class StubSensor:
     def sample_pressure(self):

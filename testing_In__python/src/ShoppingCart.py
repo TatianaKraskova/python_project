@@ -1,4 +1,4 @@
-from unit_test_project.src.Product import Product
+from testing_In__python.src.Product import Product
 
 class ShoppingCart:
     def __init__(self):
