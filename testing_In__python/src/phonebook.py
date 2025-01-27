@@ -17,3 +17,7 @@ class Phonebook:
                 if number1.startswith(number2):
                     return False
         return True
+
+
+class PhoneBook:
+    pass

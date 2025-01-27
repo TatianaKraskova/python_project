@@ -1,6 +1,6 @@
-from unit_test_project.src.Receipt import Receipt
-from unit_test_project.src.SpecialOfferType import SpecialOfferType  # Import at the top
-from unit_test_project.src import FakeCatalog, ShoppingCart, Product
+from testing_In__python.src.Receipt import Receipt
+from testing_In__python.src.SpecialOfferType import SpecialOfferType  # Import at the top
+from testing_In__python.src import FakeCatalog, ShoppingCart, Product
 
 class Teller:
     def __init__(self, catalog: FakeCatalog):

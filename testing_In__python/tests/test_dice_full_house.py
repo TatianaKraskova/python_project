@@ -1,6 +1,6 @@
 import pytest
 
-from unit_test_project.src.dice_count import full_house, dice_counts
+from testing_In__python.src.dice_count import full_house, dice_counts
 
 
 @pytest.mark.parametrize(
