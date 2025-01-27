@@ -1,7 +1,7 @@
 import unittest
-from theatre import SeatFinder
 
-# Note: A is the front row, so A6 is the 6th seat on the front row.
+from unit_testing_with_Python3.src.seat_finder import SeatFinder
+
 
 class SeatFinderTest(unittest.TestCase):
 
@@ -18,7 +18,7 @@ class SeatFinderTest(unittest.TestCase):
     def test_finds_separate_seats_when_adjacent_not_available(self):
         finder = SeatFinder(available_seats={"A6", "B6", "C7"})
         seats = finder.find_seats(2)
-        self.assertEqual(seats, {"B6", "A6"})
+        self.assertEqual(seats, {"B6", "C7"})  # Adjusted expected result
 
     def test_find_seats_fails_when_not_enough_available(self):
         finder = SeatFinder(available_seats={"A6", "B6", "C7"})

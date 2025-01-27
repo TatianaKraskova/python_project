@@ -1,5 +1,10 @@
 import unittest
 
+from unit_testing_with_Python3.src.patient import Patient
+from unit_testing_with_Python3.src.prescription import Prescription
+from unit_testing_with_Python3.tests.test_prescription import days_ago
+
+
 class TestPatient(unittest.TestCase):
     
     def test_no_clash_with_no_prescriptions(self):
