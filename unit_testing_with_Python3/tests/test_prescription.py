@@ -1,7 +1,7 @@
 import unittest
 from datetime import date, timedelta
 
-from prescription import Prescription
+from unit_testing_with_Python3.src.prescription import Prescription
 
 
 def days_ago(days):

@@ -1,6 +1,6 @@
 import unittest
 
-from telemetry import *
+from unit_testing_with_Python3.src.telemetry import TelemetryDiagnosticControls
 
 
 class TelemetryDiagnosticControlsTest(unittest.TestCase):
